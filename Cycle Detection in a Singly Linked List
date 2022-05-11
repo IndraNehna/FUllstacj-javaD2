@@ -1,0 +1,20 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    
+    public static boolean detectCycle(Node<Integer> head) {
+        //Your code goes here
+		Node slow;
+		Node fast;
+		slow = fast = head;
+		while(fast.next!=null && fast.next.next!=null){
+			  slow=slow.next;
+			  fast=fast.next.next;
+			if(fast==slow){
+				return true;
+			}
+		}
+		return false;
+	
+    }
+}
